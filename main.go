@@ -6,7 +6,7 @@ import (
 
 func main() {
     // Create a new browser window instance
-    window, err := gotron.New()
+    window, err := gotron.New("webapp")
     if err != nil {
         panic(err)
     }
