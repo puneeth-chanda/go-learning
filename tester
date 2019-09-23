@@ -1,0 +1,186 @@
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.SubtopicPageSnapshotMetadataModelValidatorTests: 7 tests (344.6 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.TopicCommitLogEntryModelValidatorTests: 12 tests (667.4 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.TopicModelValidatorTests: 15 tests (635.2 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.TopicRightsModelValidatorTests: 7 tests (338.2 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.TopicRightsSnapshotContentModelValidatorTests: 5 tests (223.1 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.TopicRightsSnapshotMetadataModelValidatorTests: 7 tests (338.2 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.TopicSimilaritiesModelValidatorTests: 10 tests (356.6 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.TopicSnapshotContentModelValidatorTests: 5 tests (204.7 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.TopicSnapshotMetadataModelValidatorTests: 7 tests (313.0 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.TopicSummaryModelValidatorTests: 10 tests (444.0 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.TrainingJobExplorationMappingModelValidatorTests: 6 tests (224.7 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.UnsentFeedbackEmailModelValidatorTests: 11 tests (343.9 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.UserBulkEmailsModelValidatorTests: 6 tests (207.9 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.UserContributionScoringModelValidatorTests: 6 tests (152.4 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.UserContributionsModelValidatorTests: 6 tests (211.0 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.UserEmailPreferencesModelValidatorTests: 4 tests (116.6 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.UserNormalizedNameAuditOneOffJobTests: 2 tests (55.5 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.UserQueryModelValidatorTests: 8 tests (260.7 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.UserRecentChangesBatchModelValidatorTests: 5 tests (150.0 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.UserSettingsModelValidatorTests: 7 tests (288.3 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.UserSkillMasteryModelValidatorTests: 7 tests (186.7 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.UserStatsModelValidatorTests: 10 tests (357.3 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.UserSubscribersModelValidatorTests: 7 tests (184.1 secs)
+SUCCESS   core.domain.prod_validation_jobs_one_off_test.UserSubscriptionsModelValidatorTests: 7 tests (271.2 secs)
+SUCCESS   core.domain.subscription_services_test.SubscriptionsTest: 17 tests (34.9 secs)
+SUCCESS   core.domain.subscription_services_test.UserSubscriptionsTest: 4 tests (5.4 secs)
+SUCCESS   core.domain.exp_domain_test.ConversionUnitTests: 1 tests (1.4 secs)
+SUCCESS   core.domain.exp_domain_test.ExpVersionReferenceTests: 3 tests (1.9 secs)
+SUCCESS   core.domain.exp_domain_test.ExplorationChangeTests: 15 tests (5.3 secs)
+======================================================================
+ERROR: test_validation (core.domain.exp_domain_test.ExplorationDomainUnitTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/puneeth2001/opensource/oppia/core/domain/exp_domain_test.py", line 705, in test_validation
+    init_state.update_interaction_answer_groups([])
+  File "/home/puneeth2001/opensource/oppia/core/domain/state_domain.py", line 1530, in update_interaction_answer_groups
+    % answer_group_object)
+Exception: Expected interaction_answer_groups to be a AnswerGroup object, received []
+
+---------------------------------------------------------------------
+FAILED    core.domain.exp_domain_test.ExplorationDomainUnitTests: 1 errors, 0 failures
+SUCCESS   core.domain.exp_domain_test.ExplorationSummaryTests: 32 tests (28.1 secs)
+SUCCESS   core.domain.exp_domain_test.ExplorationVersionsDiffDomainUnitTests: 6 tests (12.3 secs)
+SUCCESS   core.domain.exp_domain_test.HTMLMigrationUnitTests: 2 tests (2.4 secs)
+======================================================================
+FAIL: test_all_html_strings_are_collected (core.domain.exp_domain_test.HtmlCollectionTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/puneeth2001/opensource/oppia/core/domain/exp_domain_test.py", line 7439, in test_all_html_strings_are_collected
+    self.assertEqual(actual_outcome_list, expected_html_list)
+AssertionError: Lists differ: [u'', u'', u'<pre>Hello, this ... != ['', '', '<pre>Hello, this is ...
+
+First differing element 3:
+u'<p>Outcome2 for state2</p>'
+'<p>Outcome1 for state2</p>'
+
+Second list contains 1 additional elements.
+First extra element 24:
+'<p>This is value2 for DragAndDropSortInput</p>'
+
+- [u'',
+?  -
+
++ ['',
+-  u'',
+?  -
+
++  '',
+-  u'<pre>Hello, this is state2</pre>',
+?  -
+
++  '<pre>Hello, this is state2</pre>',
++  '<p>Outcome1 for state2</p>',
+-  u'<p>Outcome2 for state2</p>',
+?  -
+
++  '<p>Outcome2 for state2</p>',
+-  u'',
+?  -
+
++  '',
+-  u'<p>Hello, this is html1 for state2</p>',
+?  -
+
++  '<p>Hello, this is html1 for state2</p>',
+-  u'<p>Hello, this is html2 for state2</p>',
+?  -
+
++  '<p>Hello, this is html2 for state2</p>',
+   '<p>This is value1 for MultipleChoice</p>',
+   '<p>This is value2 for MultipleChoice</p>',
+-  u'<blockquote>Hello, this is state1</blockquote>',
+?  -
+
++  '<blockquote>Hello, this is state1</blockquote>',
+-  u'<p>Default outcome for state1</p>',
+?  -
+
++  '<p>Default outcome for state1</p>',
+-  u'<p>This is solution for state1</p>',
+?  -
+
++  '<p>This is solution for state1</p>',
+-  u'<p>Hello, this is state3</p>',
+?  -
+
++  '<p>Hello, this is state3</p>',
+-  u'<p>Outcome for state3</p>',
+?  -
+
++  '<p>Outcome for state3</p>',
+-  u'<p>This is value1 for ItemSelectionInput</p>',
+?  -
+
++  '<p>This is value1 for ItemSelectionInput</p>',
+-  u'<p>This is value3 for ItemSelectionInput</p>',
+?  -
+
++  '<p>This is value3 for ItemSelectionInput</p>',
+-  u'',
+?  -
+
++  '',
+   '<p>This is value1 for ItemSelection</p>',
+   '<p>This is value2 for ItemSelection</p>',
+   '<p>This is value3 for ItemSelection</p>',
+-  u'<p>Hello, this is state4</p>',
+?  -
+
++  '<p>Hello, this is state4</p>',
+-  u'',
+?  -
+
++  '',
+   '<p>This is value1 for DragAndDropSortInput</p>',
+   '<p>This is value2 for DragAndDropSortInput</p>']
+
+---------------------------------------------------------------------
+FAILED    core.domain.exp_domain_test.HtmlCollectionTests: 0 errors, 1 failures
+SUCCESS   core.domain.exp_domain_test.SchemaMigrationMethodsUnitTests: 2 tests (1.5 secs)
+SUCCESS   core.domain.exp_domain_test.SchemaMigrationUnitTests: 39 tests (15.2 secs)
+SUCCESS   core.domain.exp_domain_test.StateOperationsUnitTests: 1 tests (1.0 secs)
+SUCCESS   core.domain.exp_domain_test.YamlCreationUnitTests: 1 tests (1.5 secs)
+SUCCESS   core.domain.moderator_services_test.FlagExplorationEmailEnqueueTaskTests: 1 tests (2.7 secs)
+SUCCESS   core.domain.exp_services_test.ApplyDraftUnitTests: 1 tests (1.5 secs)
+SUCCESS   core.domain.exp_services_test.CommitMessageHandlingTests: 3 tests (7.1 secs)
+SUCCESS   core.domain.exp_services_test.EditorAutoSavingUnitTests: 12 tests (21.7 secs)
+SUCCESS   core.domain.exp_services_test.ExplorationCommitLogUnitTests: 2 tests (7.8 secs)
+SUCCESS   core.domain.exp_services_test.ExplorationConversionPipelineTests: 18 tests (49.8 secs)
+SUCCESS   core.domain.exp_services_test.ExplorationCreateAndDeleteUnitTests: 14 tests (28.9 secs)
+SUCCESS   core.domain.exp_services_test.ExplorationQueriesUnitTests: 2 tests (5.7 secs)
+======================================================================
+ERROR: test_reverting_an_exploration_maintains_classifier_models (core.domain.exp_services_test.ExplorationRevertClassifierTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/puneeth2001/opensource/oppia/core/domain/exp_services_test.py", line 148, in test_reverting_an_exploration_maintains_classifier_models
+    self.owner_id, self.EXP_ID, change_list, '')
+  File "/home/puneeth2001/opensource/oppia/core/domain/exp_services.py", line 837, in update_exploration
+    exploration = apply_change_list(exploration_id, change_list)
+  File "/home/puneeth2001/opensource/oppia/core/domain/exp_services.py", line 358, in apply_change_list
+    state_domain.AnswerGroup.from_dict(change.new_value))
+  File "/home/puneeth2001/opensource/oppia/core/domain/state_domain.py", line 65, in from_dict
+    Outcome.from_dict(answer_group_dict['outcome']),
+TypeError: list indices must be integers, not str
+
+---------------------------------------------------------------------
+FAILED    core.domain.exp_services_test.ExplorationRevertClassifierTests: 1 errors, 0 failures
+SUCCESS   core.domain.exp_services_test.ExplorationSearchTests: 6 tests (13.0 secs)
+SUCCESS   core.domain.exp_services_test.ExplorationServicesUnitTests: 0 tests (0.0 secs)
+SUCCESS   core.domain.exp_services_test.ExplorationSnapshotUnitTests: 4 tests (13.5 secs)
+SUCCESS   core.domain.exp_services_test.ExplorationSummaryGetTests: 2 tests (11.1 secs)
+SUCCESS   core.domain.exp_services_test.ExplorationSummaryQueriesUnitTests: 6 tests (29.4 secs)
+SUCCESS   core.domain.exp_services_test.ExplorationSummaryTests: 4 tests (13.1 secs)
+SUCCESS   core.domain.exp_services_test.ExplorationYamlImportingTests: 8 tests (9.5 secs)
+======================================================================
+FAIL: test_get_image_filenames_from_exploration (core.domain.exp_services_test.GetImageFilenamesFromExplorationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/puneeth2001/opensource/oppia/core/domain/exp_services_test.py", line 1450, in test_get_image_filenames_from_exploration
+    self.assertEqual(len(filenames), len(expected_output))
+AssertionError: 8 != 9
+
+---------------------------------------------------------------------
+FAILED    core.domain.exp_services_test.GetImageFilenamesFromExplorationTests: 0 errors, 1 failures
+SUCCESS   core.domain.exp_services_test.LoadingAndDeletionOfExplorationDemosTests: 3 tests (62.7 secs)
+SUCCESS   core.domain.exp_services_test.UpdateStateTests: 21 tests (44.4 secs)
