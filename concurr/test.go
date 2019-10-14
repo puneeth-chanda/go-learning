@@ -1,26 +1,18 @@
 package main
 
-import "fmt"
-func squares(c chan int){
-	for i:= 0;i<9;i++{
-		c<-i*i
-	}
-	close(c)
+import (
+	"time"
+	"fmt"
+)
+func printMe(){
+	time.Sleep(15*time.Millisecond)
+	fmt.Println("hello again world!!")
 }
+
 func main(){
 	fmt.Println("main() started")
-	c := make(chan int)
-
-	go squares(c)
-	for {
-		val, ok := <-c
-		if ok == false{
-			fmt.Println(val,ok,"<--broke!")
-			break
-		}else{
-			fmt.Println(val,ok )
-		}
-	}
+	go printMe()
+	time.Sleep(10*time.Millisecond)
 	fmt.Println("main() stopped")
 
 }
